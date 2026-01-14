@@ -6,7 +6,7 @@ from socket import *
 # 变量名大写通常作为配置项
 #主机地址是0.0.0.0,
 IP = '0.0.0.0'
-PORT = '50000'
+PORT = 50000
 BUFFER = 512
 
 listen_socket = socket(AF_INET,SOCK_STREAM)
@@ -28,7 +28,7 @@ while True:
     info = recved.decode()
     print(f'收到对方信息：{info}')
 
-    dataSocket.send(f'服务端接收到了信息{info},'.encode())
+    dataSocket.send(f'服务端接收到了信息{info}'.encode())
 
 # 服务器调用完关闭socket
 dataSocket.close()
